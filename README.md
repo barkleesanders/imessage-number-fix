@@ -10,10 +10,26 @@ The script restarts (kickstarts) a handful of core services that, through trial 
 
 ## Setup
 
-1. Download the `imessage_number_fix.sh` script above, or clone this repo.
-2. Copy the script to a directory in your `$PATH` e.g. `/usr/local/bin`
-3. Open a Terminal
-4. Type `chmod u+x /usr/local/bin/imessage_number_fix.sh`
+Sign Out Of iMessage
+
+Close iMessage
+
+Open terminal and run following command 
+
+curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh && chmod +x imessage_number_fix.sh && ./imessage_number_fix.sh
+
+The command curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh uses the curl command to download the file located at the specified URL. The options used in this command are:
+
+-L: Follows redirects, this is useful in case the URL redirects to another location.
+-J: Auto-name the file based on the URL, this will automatically save the file with the same name as the file on the server.
+-O: Save the file with the same name as the file on the server.
+The && operator is used to chain commands together. It runs the command that follows it only if the command preceding it completes successfully.
+
+The command chmod +x imessage_number_fix.sh changes the permissions of the file imessage_number_fix.sh to make it executable. The +x flag adds the execute permission for the owner of the file.
+
+Finally, ./imessage_number_fix.sh runs the script file imessage_number_fix.sh that has been downloaded and made executable in the previous commands.
+
+Together, this command downloads the script file, makes it executable, and then runs it
 
 ## Usage
 
