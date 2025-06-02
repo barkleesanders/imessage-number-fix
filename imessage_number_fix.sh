@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Array of XPC services to be restarted.
+# These services are related to contacts, messaging, and notifications.
 declare -a xpcArr=(
 	gui/$UID/com.apple.AddressBook.abd
 	gui/$UID/com.apple.AddressBook.AssistantService
@@ -19,6 +21,11 @@ declare -a xpcArr=(
 	user/$UID/com.apple.imdpersistence.IMDPersistenceAgent
 )
 
+# Iterate through the array of XPC services.
+# For each service, attempt to restart it using 'launchctl kickstart -kp'.
+# '-k' flag forces the service to stop and restart if already running.
+# '-p' flag returns the PID of the restarted service.
+# Output success (✔) or failure (✘) for each service.
 for d in "${xpcArr[@]}"; do
 	echo -n "restarting $d"
 	read -r PID < <(launchctl kickstart -kp "$d" 2>/dev/null)

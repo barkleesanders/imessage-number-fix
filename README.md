@@ -10,30 +10,55 @@ The script restarts (kickstarts) a handful of core services that, through trial 
 
 ## Setup
 
-Sign Out Of iMessage
+Before running the script, it's recommended to:
 
-Close iMessage
+1.  Sign Out Of iMessage
+2.  Close Messages.app
 
-Open terminal and run following command 
+Then, to install and run the script, open your Terminal and use the following single-line command:
 
+```bash
 curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh && chmod +x imessage_number_fix.sh && ./imessage_number_fix.sh
+```
 
-The command curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh uses the curl command to download the file located at the specified URL. The options used in this command are:
+Here's a breakdown of what this command does:
 
--L: Follows redirects, this is useful in case the URL redirects to another location.
--J: Auto-name the file based on the URL, this will automatically save the file with the same name as the file on the server.
--O: Save the file with the same name as the file on the server.
-The && operator is used to chain commands together. It runs the command that follows it only if the command preceding it completes successfully.
+1.  **Downloads the script:**
+    `curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh`
+    This command uses `curl` to download the script file.
+    *   `-L`: Follows redirects if the file has moved.
+    *   `-J`: Uses the server-suggested filename (imessage_number_fix.sh).
+    *   `-O`: Saves the file with that name.
 
-The command chmod +x imessage_number_fix.sh changes the permissions of the file imessage_number_fix.sh to make it executable. The +x flag adds the execute permission for the owner of the file.
+2.  **Makes the script executable:**
+    `chmod +x imessage_number_fix.sh`
+    This command changes the permissions of the downloaded file (`imessage_number_fix.sh`) to allow it to be executed as a program. `+x` specifically adds the executable permission.
 
-Finally, ./imessage_number_fix.sh runs the script file imessage_number_fix.sh that has been downloaded and made executable in the previous commands.
+3.  **Runs the script:**
+    `./imessage_number_fix.sh`
+    This command executes the script you just downloaded and made executable.
 
-Together, this command downloads the script file, makes it executable, and then runs it
+The `&&` operator is used to chain these commands together. It ensures that the next command only runs if the previous one was successful.
+
+## Updating the Script
+
+To get the latest version of the script, you can re-run the download command:
+
+```bash
+curl -LJO https://raw.githubusercontent.com/luckman212/imessage-number-fix/main/imessage_number_fix.sh && chmod +x imessage_number_fix.sh
+```
+
+This will overwrite the old script file with the newest version. After updating, you can run it as usual.
 
 ## Usage
 
-Whenever you encounter this bug, run the script by typing `imessage_number_fix.sh` in a Terminal.
+Whenever you encounter this bug, open a Terminal and run the script.
+
+If you are in the same directory where you downloaded `imessage_number_fix.sh`, you can run it with:
+```bash
+./imessage_number_fix.sh
+```
+If the script is in a different directory, you'll need to provide the full path to it, or add it to your system's PATH.
 
 ## Related Discussion
 
